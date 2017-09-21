@@ -5,8 +5,6 @@ object OptionSomeNone {
   def main(args: Array[String]): Unit = {
 
     // Option, Some, and None
-
-
 /*
      def Option2(x2 : String) = if (x2 == null) None else Some(x2)
     def Option3(x2 : Int) = if (x2 == null) None else Some(x2)
@@ -18,20 +16,23 @@ object OptionSomeNone {
     println(Option3(454).getOrElse("Naidu"))
     println(Option3(0).get)
     println(Option3(99))
-*/
 
+*/
+/*
     // Option, Some, and None
 
-    val x: Option[Int] = Some(0013164165464)
+    val x: Option[String] = Some("naidu")  // Naidu
     println(x.get)
 
-    var y: Option[String] = Some("slkdlksdf")
-    println(y.get)
+    var y: Option[String] = None  // None
+    println(y)
 
-    val firstName : Option[Int] = Some(121212)
-    println(firstName.getOrElse(10000))
+    val firstName : Option[String] = None  // None
 
-    val bestNumber: Option[Int] = None
+    println(firstName.getOrElse("123456"))
+    println(firstName.getOrElse("123456"))
+
+    val bestNumber: Option[Int] = None   // None
     println(bestNumber.getOrElse(8))
 
     val bestNumber2: Option[Int] = None
@@ -39,36 +40,45 @@ object OptionSomeNone {
 
     val bestNumber4: Option[String] = None
     println(bestNumber4)
+*/
 
     var myMood2: Option[String] = Some("happy")
-    //   myMood2 = Some(10)
     myMood2 = Some("Jagan")
     println(myMood2.get)
 
-
-    def fullName(firstName: String, lastName: String)
-
+   /* def fullName( firstName: String,
+                  lastName: String)
     : String = {
       Seq(firstName, lastName).
         flatMap(Option[String]).
         mkString(",")
     }
 
+    var y: Option[String] = None
+    println(y)
+
     println(fullName(null, "barker"))
     println(fullName("coolio", null))
     println(fullName("cat", "dog"))
 
+              def makeFun(word: String): String = {
+                if (word == null) {
+                  "I like fun!" }
+              else {
+                  s"$word is fun"
+                }
+              }
 
-    def makeFun(word: String): String = {
-      if (word == null) {
-        "I like fun!"
-      } else {
-        s"$word is fun"
-      }
-    }
+              println(makeFun("paint")) // "paint is fun"
+              println(makeFun(null)) // "I like fun!"
 
-    println(makeFun("paint")) // "paint is fun"
-    println(makeFun(null)) // "I like fun!"
+
+    val bestNumber2: Option[Int] = Some(1212)
+    println(bestNumber2)
+
+    val bestNumber4: Option[String] = None
+    println(bestNumber4)
+    println(bestNumber4.getOrElse("123456"))*/
+
   }
-
 }

@@ -4,90 +4,86 @@ object functions {
 
   def main(args: Array[String]): Unit = {
 
-    def howdy() = "hi y'all"
-    println(howdy())
+    def howdy () = "hi y'all"; println(howdy)
 
     // *******************
 
-    def view = "mountains"
-    println(view)
+    def view = "mountains" ; println(view)
 
     // *******************
 
-    def building = {
-      "tall"
-    }
+    def building = { "tall" } ; println(building)
 
-    println(building)
+        // *******************
 
-    // *******************
-
-    def happy(thing: String) = {
-      s"I like $thing"
-    }
-
+        def happy(thing: String) = { s"I like $thing" }
     println(happy("cats"))
 
-    // *******************
 
-    def crazy(number: Int) = {
-      number + 3
-    }
+            // *******************
 
-    // println(crazy("book"))
-    println(crazy(123))
-    // *******************
+            def crazy(number: Int) = {
+              number + 3
+            }
 
-    def cool(number: Double): String = {
-      s"${number.toString} is cool"
-    }
+            // println(crazy("book"))
+            println(crazy(123))
+            // *******************
 
-    println(cool(3.14))
-    // *******************
+                def cool(number: Double): String = {
+                  s"${number.toString} is cool"
+                }
 
-    def singSong(times: Int): Any = {
-      s"I'm going to sing ${times} times"
-    }
+                println(cool(3.14))
 
-    println(singSong(5))
+                // *******************
 
-    // *******************
+                def singSong(times: Int): Any = {
+                  s"I'm going to sing ${times} times"
+                }
 
-    def add(a: Int, b: Int): Int = {
-      a + b
-    }
+                println(singSong(5))
 
-    println(add(3, 6))
+                    // *******************
 
-    // *******************
+                    def add(a: Int, b: Int): Int = {
+                      a + b
+                    }
 
-    def fullName(first: String, last: String = "balvin"): String = {
-      s"$first $last"
-    }
+                    println(add(3, 6))
 
-    println(fullName("j"))
+                        // *******************
 
-    // *******************
-    def mathFun(x: Int, y: Int = 99): Int = {
-      x * y
-    }
+                        def fullName(first: String,
+                                     last: String = "balvin"): String = {
+                          s"$first $last"
+                        }
 
-    println(mathFun(4, 5))
+                        println(fullName("j"))
 
-    // *******************
-    def airplane(company: String): String = {
-      s"The plane belongs to $company"
-    }
 
-    println(airplane("Delta"))
+                            // *******************
+                            def mathFun(x: Int, y: Int = 99): Int = {
+                              x * y
+                            }
 
-    // *******************
-    def theBest(category: String, thing: String): String = {
-      s"The best type of $category is $thing"
-    }
+                            println(mathFun(4, 5))
 
-    println(theBest("Squirtle", "Pokemon"))
-    // *******************
+                                // *******************
+                                def airplane(company: String): String = {
+                                  s"The plane belongs to $company"
+                                }
+
+                                println(airplane("Delta"))
+    /*
+                                  // *******************
+                                  def theBest(category: String, thing: String): String = {
+                                    s"The best type of $category is $thing"
+                                  }
+
+                                  println(theBest("Squirtle", "Pokemon"))
+                                  // *******************
+                              */
   }
 
 }

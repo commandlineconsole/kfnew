@@ -18,6 +18,7 @@ object Map_02 {
     println(p2)
     p2.foreach(println)
 
+
  /*   val parallel = sc.parallelize(1 to 9, 5)
 
     val p1 = parallel.mapPartitionsWithIndex(

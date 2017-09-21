@@ -1,31 +1,32 @@
 package edu
 
 import org.apache.spark.streaming._
-import org.apache.spark.{SparkConf, SparkContext}
-
 object Map_01 {
 
   def main(args: Array[String]): Unit = {
 
-    val conf = new SparkConf().setAppName("WordCount")
-    conf.setMaster("local[*]")
-    val sc = new SparkContext(conf)
+    import onlineex.SparkTrans.config._
 
-    val x = sc.parallelize(Array("b", "a", "c"))
-    val y = x.map(z => (z,1))
-    println(y)
+/*
+    val x1 = sc.parallelize(Array(1,2,3,4,5,6))
+    val result = 0
 
-    val x1 = sc.parallelize(Array(1,2,3))
-    val y1 = x1.filter(n => n%2 == 1)
+    val y1 = x1.filter(n => n%2 == 0)
+    y1.foreach(println)
 
+    println(y1.collect().sum)
     println(y1.collect().mkString(", "))
 
 
-    /*
+    // val x = sc.parallelize(Array("b", "a", "c"))
+
+    val y = y1.map(z => (z,1))
+    val z = y.map(z => y.foreach(println))
 
     val x2 = sc.parallelize(Array(1,2,3))
     val y2 = x2.flatMap(n => Array(n, n*100, 42))
     val y3 = x2.map(n => Array(n, n*100, 42))
+
     println("******* flatMap 123 ********* ")
     println(x2.collect().mkString(", "))
     println("******* flatMap 456 ********* ")
@@ -45,24 +46,32 @@ object Map_01 {
 
     val x5 = sc.parallelize(
       Array(('B',5),('B',4),('A',3),('A',2),('A',1)))
+
     val y5 = x5.groupByKey()
+
     println("******* groupBykey 123 ********* ")
     println(x5.collect().mkString(", "))
     println("******* groupBykey 123 ********* ")
     println(y5.collect().mkString(", "))
 
+*/
 
     val words = Array("one", "two", "two", "three", "three", "three")
-    val wordPairsRDD = sc.parallelize(words).map(word => (word, 1))
 
-    println("******* reduceByKey 123 ********* ")
+    val wordPairsRDD = sc.parallelize(words).
+                          map(word => (word, 1))
+                          // .reduceByKey(_ + _).collect()
 
-    val wordCountsWithReduce = wordPairsRDD
-      .reduceByKey(_ + _)
-      .collect()
 
-    println(wordCountsWithReduce)
-    wordCountsWithReduce.foreach(println)
+  val wordCountsWithGroup = wordPairsRDD.reduceByKey((a,b) => a + b)
+                           /*     //.groupByKey()
+                                .map(t => (t._1, t._2.sum))   //  .map(t => (t._1, t._2))
+                                .collect()*/
+
+   // println(wordCountsWithGroup)
+    wordCountsWithGroup.foreach(println)
+
+/*
     println("******* reduceByKey 345 ********* ")
 
     val wordCountsWithGroup = wordPairsRDD
@@ -72,6 +81,7 @@ object Map_01 {
 
     println(wordCountsWithGroup)
     wordCountsWithGroup.foreach(println)       // TODO  : (one,1) (two,2) (three,3)
+
     println("******* groupByKey 123 ********* ")
 
     val x6 = sc.parallelize(Array(1,2,3), 2)
@@ -84,8 +94,7 @@ object Map_01 {
     println("******* mapPartitions 123 ********* ")
     println(yOut)
     yOut.foreach(println)
-    println("******* mapPartitions 345 ********* ")
-*/
+    println("******* mapPartitions 345 ********* ")*/
   }
 
 }

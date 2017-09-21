@@ -12,7 +12,7 @@ object df_feedback {
       val rootLogger = Logger.getRootLogger()
       rootLogger.setLevel(Level.ERROR)
       // For implicit conversions like converting RDDs to DataFrames
-      val rawRDD = read("feedback.csv")
+      val rawRDD = read("feedback/feedback.csv")
       val initRDD = toRDD(rawRDD)
       val finalRDD = feedbackGroupedRDD(initRDD)
 

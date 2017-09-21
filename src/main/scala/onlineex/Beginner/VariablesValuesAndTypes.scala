@@ -1,5 +1,4 @@
 package onlineex.Beginner
-
 object VariablesValuesAndTypes {
 
   def main(args: Array[String]): Unit = {
@@ -13,6 +12,7 @@ object VariablesValuesAndTypes {
     var aa  = "hello"
     aa = "pretty"
     aa = "Jagan"
+
     println(aa)
 
     val cc: Double = 3.14
@@ -20,11 +20,12 @@ object VariablesValuesAndTypes {
 
     var dd: Double = 9.99
     dd = 11.001
+
     println(dd)
 
     var gg = 8.88
-    println(gg)
 
+    println(gg)
 
   }
 }
